@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;600&display=swap");
+
+:root {
+  --black: #080808;
+  --paper: #f6f2e9;
+  --white: #fff;
+  --pink: #f3008a;
+  --cyan: #16bce2;
+  --yellow: #fff100;
+  --red: #ec2027;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--black);
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.topline {
+  width: 100%;
+  overflow: hidden;
+  background: var(--black);
+  color: var(--white);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+  border-top: 40px solid var(--black);
+}
+
+.ticker {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: ticker 28s linear infinite;
+}
+
+.ticker-group {
+  display: flex;
+  min-width: 100vw;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 0.52rem 1rem;
+}
+
+.ticker i {
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  background: var(--pink);
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-33.333333%);
+  }
+}
+
+header {
+  display: grid;
+  min-height: 106px;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 5vw;
+  border-bottom: 2px solid;
+}
+
+.logo,
+.footer-logo {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(2.8rem, 5.2vw, 5rem);
+  letter-spacing: -0.08em;
+  line-height: 0.8;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a,
+.home-link {
+  font: 800 0.85rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+nav a {
+  border-bottom: 3px solid transparent;
+  padding: 0.35rem 0;
+}
+
+nav a:hover,
+nav a.active {
+  border-color: var(--pink);
+}
+
+.home-link {
+  justify-self: end;
+  border: 2px solid;
+  padding: 0.7rem 0.9rem;
+  background: var(--yellow);
+  box-shadow: 4px 4px 0 var(--black);
+}
+
+main {
+  padding-bottom: 4rem;
+}
+
+.archive-hero {
+  display: grid;
+  grid-template-columns: 0.68fr 1.32fr;
+  align-items: stretch;
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  padding: clamp(2rem, 3.5vw, 3.5rem) 6vw;
+  border-bottom: 2px solid;
+  background: var(--paper);
+}
+
+.archive-copy {
+  display: flex;
+  min-height: 400px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: 2px solid var(--black);
+  padding: clamp(1.8rem, 3vw, 3rem);
+  background: var(--pink);
+  box-shadow: 8px 8px 0 var(--cyan);
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  font: 800 0.78rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.archive-hero h1 {
+  margin: 0;
+  color: var(--white);
+  font: clamp(4.5rem, 9vw, 9rem) / 0.72 "Archivo Black", sans-serif;
+  letter-spacing: -0.09em;
+  text-shadow: 5px 5px 0 var(--black);
+  text-transform: uppercase;
+}
+
+.archive-copy > p:not(.eyebrow) {
+  max-width: 540px;
+  margin: 1.5rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.publication-count {
+  font: 800 1rem "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+.publication-count strong {
+  margin-right: 0.4rem;
+  font: 2.8rem "Archivo Black", sans-serif;
+}
+
+.hero-filters {
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+}
+
+.hero-filters button {
+  background: var(--yellow);
+}
+
+.archive-feature {
+  display: grid;
+  min-width: 0;
+  grid-template-rows: minmax(280px, 1fr) auto;
+  border: 2px solid var(--black);
+  background: var(--yellow);
+  box-shadow: 12px 12px 0 var(--black);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.archive-feature:hover {
+  box-shadow: 4px 4px 0 var(--black);
+  transform: translate(8px, 8px);
+}
+
+.archive-feature-image {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border-bottom: 2px solid var(--black);
+}
+
+.archive-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.archive-feature:hover .archive-feature-image img {
+  transform: scale(1.025);
+}
+
+.archive-feature-image > span {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border: 2px solid var(--black);
+  padding: 0.45rem 0.65rem;
+  background: var(--pink);
+  color: var(--white);
+  font: 800 0.72rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.archive-feature-copy {
+  position: relative;
+  padding: clamp(1.3rem, 2.2vw, 2rem);
+}
+
+.archive-feature-copy h2 {
+  max-width: 780px;
+  margin: 0 0 1.2rem;
+  font: 900 clamp(2.6rem, 4.3vw, 4.8rem) / 0.82 "Barlow Condensed", sans-serif;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+.archive-feature-copy > span {
+  display: inline-block;
+  border-bottom: 3px solid var(--black);
+  padding-bottom: 0.2rem;
+  font: 800 0.82rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.filters {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  border: 2px solid;
+  padding: 0.65rem 0.8rem;
+  background: transparent;
+  cursor: pointer;
+  font: 800 0.78rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.filters button:hover,
+.filters button.active {
+  background: var(--black);
+  color: var(--white);
+}
+
+.editorial-group {
+  padding: clamp(3rem, 4.5vw, 4.5rem) 6vw 0;
+}
+
+.group-heading {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid;
+  padding-bottom: 0.9rem;
+}
+
+.group-heading > span {
+  color: var(--pink);
+  font: 2.8rem "Archivo Black", sans-serif;
+  line-height: 0.8;
+}
+
+.group-heading h2 {
+  margin: 0;
+  font: clamp(2.6rem, 4.5vw, 5rem) / 0.82 "Archivo Black", sans-serif;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1.5rem;
+}
+
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.article-card {
+  border: 2px solid;
+  background: var(--white);
+  box-shadow: 7px 7px 0 var(--black);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.article-card:hover {
+  box-shadow: 2px 2px 0 var(--black);
+  transform: translate(5px, 5px);
+}
+
+.article-card > a {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.card-image {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  border-bottom: 2px solid;
+}
+
+.article-card-large .card-image {
+  height: 360px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.article-card:hover .card-image img {
+  transform: scale(1.025);
+}
+
+.card-image > span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0.45rem 0.6rem;
+  background: var(--black);
+  color: var(--white);
+  font: 800 0.72rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: start;
+  padding: 1.4rem;
+}
+
+.card-copy .eyebrow {
+  display: inline-block;
+  padding: 0.25rem 0.4rem;
+  background: var(--cyan);
+}
+
+.culture-grid .article-card:first-child .eyebrow {
+  background: var(--yellow);
+}
+
+.culture-grid .article-card:last-child .eyebrow {
+  background: var(--red);
+  color: var(--white);
+}
+
+.card-copy h3 {
+  margin: 0;
+  font: 900 clamp(2.1rem, 3.4vw, 4rem) / 0.9 "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+.article-card-side .card-copy h3,
+.culture-grid .card-copy h3 {
+  font-size: clamp(2rem, 2.8vw, 3.2rem);
+}
+
+.card-copy > p:not(.eyebrow) {
+  margin: 0.9rem 0 1.3rem;
+  line-height: 1.55;
+}
+
+.card-meta {
+  display: flex;
+  width: 100%;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  border-top: 1px solid;
+  padding-top: 1rem;
+  font: 700 0.74rem "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+.card-meta b {
+  font: 1.5rem "Archivo Black", sans-serif;
+}
+
+.empty-state {
+  margin: 5rem 6vw 0;
+  border: 2px solid;
+  padding: 4rem 2rem;
+  background: var(--cyan);
+  font: 900 clamp(2rem, 5vw, 5rem) "Barlow Condensed", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 2rem;
+  padding: 3.5rem 5vw 2rem;
+  background: var(--black);
+  color: var(--white);
+}
+
+footer p,
+footer > a:last-child {
+  margin: 0;
+  font: 700 0.78rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+footer > a:last-child {
+  justify-self: end;
+}
+
+@media (max-width: 900px) {
+  header {
+    grid-template-columns: 1fr auto;
+  }
+
+  header nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .home-link {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .archive-hero,
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-copy {
+    min-height: 300px;
+  }
+
+  .archive-feature {
+    grid-template-rows: 360px auto;
+  }
+
+  .article-card-large .card-image {
+    height: 340px;
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    min-height: 82px;
+  }
+
+  .logo {
+    font-size: 2.8rem;
+  }
+
+  .home-link {
+    padding: 0.55rem 0.65rem;
+  }
+
+  header nav {
+    justify-content: flex-start;
+    gap: 1.2rem;
+    overflow-x: auto;
+  }
+
+  .archive-hero h1 {
+    font-size: 20vw;
+    text-shadow: 4px 4px 0 var(--black);
+  }
+
+  .archive-copy {
+    min-height: 280px;
+  }
+
+  .archive-feature {
+    grid-template-rows: 280px auto;
+    box-shadow: 7px 7px 0 var(--black);
+  }
+
+  .culture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .group-heading {
+    align-items: start;
+  }
+
+  .card-image,
+  .article-card-large .card-image {
+    height: 280px;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  footer > a:last-child {
+    justify-self: start;
+  }
+}

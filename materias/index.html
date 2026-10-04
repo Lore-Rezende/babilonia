@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Todas as reportagens, entrevistas e críticas da Revista Babilônia."
+    />
+    <title>Matérias — Revista Babilônia</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="topline" aria-label="Destaques">
+      <div class="ticker">
+        <div class="ticker-group">
+          <span>EDIÇÃO 01 NO AR</span><i></i>
+          <span>CULTURA, AFETO &amp; RESISTÊNCIA</span><i></i>
+          <span>BAURU — SP</span><i></i>
+          <span>OUTUBRO DE 2026</span><i></i>
+          <span>ANO 1 / VOL. 1</span><i></i>
+        </div>
+        <div class="ticker-group" aria-hidden="true">
+          <span>EDIÇÃO 01 NO AR</span><i></i>
+          <span>CULTURA, AFETO &amp; RESISTÊNCIA</span><i></i>
+          <span>BAURU — SP</span><i></i>
+          <span>OUTUBRO DE 2026</span><i></i>
+          <span>ANO 1 / VOL. 1</span><i></i>
+        </div>
+        <div class="ticker-group" aria-hidden="true">
+          <span>EDIÇÃO 01 NO AR</span><i></i>
+          <span>CULTURA, AFETO &amp; RESISTÊNCIA</span><i></i>
+          <span>BAURU — SP</span><i></i>
+          <span>OUTUBRO DE 2026</span><i></i>
+          <span>ANO 1 / VOL. 1</span><i></i>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <a class="logo" href="../inicio/index.html">BABILÔNIA</a>
+      <nav aria-label="Navegação da seção">
+        <a class="active" href="index.html">Matérias</a>
+        <a href="../manifesto/index.html">Manifesto</a>
+        <a href="../agenda/index.html">Agenda</a>
+        <a href="../sobre/index.html">Sobre</a>
+      </nav>
+      <a class="home-link" href="../inicio/index.html">← Início</a>
+    </header>
+
+    <main>
+      <section class="archive-hero">
+        <div class="archive-copy">
+          <p class="eyebrow">Todas as histórias em um só lugar</p>
+          <h1>Matérias</h1>
+          <p>
+            Reportagens, entrevistas, críticas e guias produzidos por nós e para
+            a comunidade LGBTQIA+.
+          </p>
+          <span class="publication-count">
+            <strong id="result-count">04</strong> publicações
+          </span>
+          <div class="filters hero-filters" role="group" aria-label="Filtrar por tema">
+            <button class="active" type="button" data-filter="todos">Todas</button>
+            <button type="button" data-filter="resistencia">Resistência</button>
+            <button type="button" data-filter="educacao">Educação</button>
+            <button type="button" data-filter="cultura">Cultura</button>
+            <button type="button" data-filter="cinema">Cinema</button>
+          </div>
+        </div>
+        <a class="archive-feature" href="ballroom/index.html">
+          <div class="archive-feature-image">
+            <img
+              src="../assets/ballroom-abertura.jpg"
+              alt="Ensaio da reportagem sobre a cultura Ballroom"
+            />
+            <span>Matéria principal</span>
+          </div>
+          <div class="archive-feature-copy">
+            <p class="eyebrow">Ballroom / Reportagem de capa</p>
+            <h2>A cultura que nasce da resistência</h2>
+            <span>Ler matéria completa →</span>
+          </div>
+        </a>
+      </section>
+
+      <div id="empty-state" class="empty-state" hidden>
+        Nenhuma matéria encontrada.
+      </div>
+
+      <section class="editorial-group" data-group>
+        <div class="group-heading">
+          <span>01</span>
+          <div>
+            <p class="eyebrow">Editoria</p>
+            <h2>Sociedade &amp; resistência</h2>
+          </div>
+        </div>
+
+        <div class="featured-grid">
+          <article
+            class="article-card article-card-large"
+            data-article
+            data-themes="resistencia cultura arte ballroom comunidade"
+          >
+            <a href="ballroom/index.html">
+              <div class="card-image">
+                <img
+                  src="../assets/ballroom-abertura.jpg"
+                  alt="Ensaio da reportagem sobre a cultura Ballroom"
+                />
+                <span>Reportagem de capa</span>
+              </div>
+              <div class="card-copy">
+                <p class="eyebrow">Ballroom / Resistência</p>
+                <h3>A cultura que nasce da resistência</h3>
+                <p>
+                  Arte, acolhimento e família: como o Ballroom transforma exclusão
+                  em potência coletiva.
+                </p>
+                <div class="card-meta">
+                  <span>12 min de leitura</span>
+                  <b>01 ↗</b>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article
+            class="article-card article-card-side"
+            data-article
+            data-themes="educacao academia representatividade pesquisa sociedade"
+          >
+            <a href="academia/index.html">
+              <div class="card-image">
+                <img
+                  src="../assets/academia.jpg"
+                  alt="Páginas da matéria sobre presença LGBTQIA+ na academia"
+                />
+                <span>Entrevista</span>
+              </div>
+              <div class="card-copy">
+                <p class="eyebrow">Educação / Pesquisa</p>
+                <h3>Em todos os espaços: a presença LGBTQIA+ na academia</h3>
+                <p>
+                  O direito de produzir conhecimento a partir das nossas próprias
+                  vivências.
+                </p>
+                <div class="card-meta">
+                  <span>8 min de leitura</span>
+                  <b>02 ↗</b>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="editorial-group culture-group" data-group>
+        <div class="group-heading">
+          <span>02</span>
+          <div>
+            <p class="eyebrow">Editoria</p>
+            <h2>Cultura &amp; crítica</h2>
+          </div>
+        </div>
+
+        <div class="culture-grid">
+          <article
+            class="article-card"
+            data-article
+            data-themes="cultura musica cinema lancamentos curadoria"
+          >
+            <a href="lancamentos/index.html">
+              <div class="card-image">
+                <img
+                  src="../assets/lancamentos.jpg"
+                  alt="Páginas da curadoria de lançamentos"
+                />
+                <span>Curadoria</span>
+              </div>
+              <div class="card-copy">
+                <p class="eyebrow">Cultura / Lançamentos</p>
+                <h3>Lançamentos para assistir, ouvir e sentir</h3>
+                <p>
+                  Cinema e música para colocar no radar — uma seleção feita por
+                  quem vive a cultura.
+                </p>
+                <div class="card-meta">
+                  <span>6 min de leitura</span>
+                  <b>03 ↗</b>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article
+            class="article-card"
+            data-article
+            data-themes="cinema cultura critica moda jornalismo"
+          >
+            <a href="diabo-veste-prada/index.html">
+              <div class="card-image">
+                <img
+                  src="../assets/prada.jpg"
+                  alt="Páginas da crítica de O Diabo Veste Prada 2"
+                />
+                <span>Crítica</span>
+              </div>
+              <div class="card-copy">
+                <p class="eyebrow">Cinema / Moda</p>
+                <h3>O passado se reinventa com propósito</h3>
+                <p>
+                  Moda, jornalismo e nostalgia se encontram de novo em O Diabo
+                  Veste Prada 2.
+                </p>
+                <div class="card-meta">
+                  <span>7 min de leitura</span>
+                  <b>04 ↗</b>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="footer-logo" href="../inicio/index.html">BABILÔNIA</a>
+      <p>Jornalismo, cultura, afeto e resistência.</p>
+      <a href="../inicio/index.html">Voltar ao início ↑</a>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

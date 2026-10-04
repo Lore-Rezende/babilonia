@@ -1,0 +1,10 @@
+@import url("../article.css");
+
+:root {
+  --accent: var(--yellow);
+}
+
+.article-intro h1 {
+  color: var(--black);
+  text-shadow: 5px 5px 0 var(--white);
+}

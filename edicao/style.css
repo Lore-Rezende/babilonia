@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@600;800&display=swap");
+
+:root {
+  --black: #080808;
+  --paper: #f6f2e9;
+  --pink: #f3008a;
+  --cyan: #16bce2;
+  --yellow: #fff100;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  place-items: center;
+  padding: 2rem;
+  background: var(--yellow);
+  color: var(--black);
+}
+
+body::before,
+body::after {
+  position: fixed;
+  width: min(38rem, 60vw);
+  aspect-ratio: 1;
+  background: var(--pink);
+  clip-path: polygon(
+    50% 0%, 58% 34%, 79% 8%, 72% 40%, 100% 29%, 77% 52%,
+    100% 72%, 69% 63%, 75% 98%, 53% 69%, 40% 100%, 41% 67%,
+    13% 91%, 30% 60%, 0 64%, 25% 47%, 0 25%, 32% 37%
+  );
+  content: "";
+}
+
+body::before {
+  top: -22rem;
+  right: -16rem;
+}
+
+body::after {
+  bottom: -24rem;
+  left: -18rem;
+  background: var(--cyan);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  width: min(850px, 100%);
+  border: 3px solid var(--black);
+  padding: clamp(2.5rem, 7vw, 6rem);
+  background: var(--paper);
+  box-shadow: 14px 14px 0 var(--black);
+}
+
+.label {
+  margin: 0 0 1rem;
+  font: 800 0.85rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font: clamp(4rem, 13vw, 9rem) / 0.78 "Archivo Black", sans-serif;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+}
+
+p:not(.label) {
+  max-width: 470px;
+  margin: 2rem 0;
+  font: 600 1.1rem / 1.5 "Barlow Condensed", sans-serif;
+}
+
+a {
+  display: inline-block;
+  border: 2px solid var(--black);
+  padding: 0.9rem 1.2rem;
+  background: var(--pink);
+  box-shadow: 4px 4px 0 var(--black);
+  color: white;
+  font: 800 0.9rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 160ms ease;
+}
+
+a:hover {
+  box-shadow: 1px 1px 0 var(--black);
+  transform: translate(3px, 3px);
+}

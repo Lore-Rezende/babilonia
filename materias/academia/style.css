@@ -1,0 +1,5 @@
+@import url("../article.css");
+
+:root {
+  --accent: var(--cyan);
+}
