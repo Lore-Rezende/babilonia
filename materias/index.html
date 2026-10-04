@@ -2,7 +2,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta
       name="description"
       content="Todas as reportagens, entrevistas e críticas da Revista Babilônia."
@@ -51,6 +51,16 @@
     <main>
       <section class="archive-hero">
         <div class="archive-copy">
+          <button
+            class="archive-menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="archive-menu-content"
+          >
+            <span>Matérias e categorias</span>
+            <b aria-hidden="true">+</b>
+          </button>
+          <div class="archive-menu-content" id="archive-menu-content">
           <p class="eyebrow">Todas as histórias em um só lugar</p>
           <h1>Matérias</h1>
           <p>
@@ -58,14 +68,16 @@
             a comunidade LGBTQIA+.
           </p>
           <span class="publication-count">
-            <strong id="result-count">04</strong> publicações
+            <strong id="result-count">05</strong> publicações
           </span>
           <div class="filters hero-filters" role="group" aria-label="Filtrar por tema">
             <button class="active" type="button" data-filter="todos">Todas</button>
             <button type="button" data-filter="resistencia">Resistência</button>
             <button type="button" data-filter="educacao">Educação</button>
+            <button type="button" data-filter="politica">Política</button>
             <button type="button" data-filter="cultura">Cultura</button>
             <button type="button" data-filter="cinema">Cinema</button>
+          </div>
           </div>
         </div>
         <a class="archive-feature" href="ballroom/index.html">
@@ -156,9 +168,49 @@
         </div>
       </section>
 
-      <section class="editorial-group culture-group" data-group>
+      <section class="editorial-group politics-group" data-group>
         <div class="group-heading">
           <span>02</span>
+          <div>
+            <p class="eyebrow">Editoria</p>
+            <h2>Política &amp; direitos</h2>
+          </div>
+        </div>
+
+        <div class="politics-grid">
+          <article
+            class="article-card politics-card"
+            data-article
+            data-themes="politica direitos representatividade congresso juventude lgbtqia"
+          >
+            <a href="cortez/index.html">
+              <div class="card-image">
+                <img
+                  src="../assets/cortez.jpg"
+                  alt="Guilherme Cortez em reportagem da Revista Babilônia"
+                />
+                <span>Perfil</span>
+              </div>
+              <div class="card-copy">
+                <p class="eyebrow">Política / Representatividade</p>
+                <h3>Cortez: as cores em um Congresso preto e branco</h3>
+                <p>
+                  O deputado que aproxima juventude, diversidade e causas urgentes
+                  dentro e fora da Assembleia Legislativa.
+                </p>
+                <div class="card-meta">
+                  <span>5 min de leitura</span>
+                  <b>03 ↗</b>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="editorial-group culture-group" data-group>
+        <div class="group-heading">
+          <span>03</span>
           <div>
             <p class="eyebrow">Editoria</p>
             <h2>Cultura &amp; crítica</h2>
@@ -188,7 +240,7 @@
                 </p>
                 <div class="card-meta">
                   <span>6 min de leitura</span>
-                  <b>03 ↗</b>
+                  <b>04 ↗</b>
                 </div>
               </div>
             </a>
@@ -216,7 +268,7 @@
                 </p>
                 <div class="card-meta">
                   <span>7 min de leitura</span>
-                  <b>04 ↗</b>
+                  <b>05 ↗</b>
                 </div>
               </div>
             </a>

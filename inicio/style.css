@@ -70,7 +70,7 @@ svg {
   font-weight: 700;
   letter-spacing: 0.16em;
   white-space: nowrap;
-  border-top: 40px solid var(--black);
+  padding-top: max(40px, env(safe-area-inset-top, 0px));
 }
 
 .ticker {
@@ -316,7 +316,7 @@ svg {
   transition: transform 300ms ease;
 }
 
-.cover-stage:hover img {
+.cover-stage img:hover {
   transform: rotate(1deg) scale(1.02);
 }
 
@@ -940,7 +940,7 @@ footer {
   }
 
   .note-top {
-    top: 12%;
+    top: 5%;
     right: 5%;
   }
 

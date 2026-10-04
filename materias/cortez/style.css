@@ -1,0 +1,87 @@
+@import url("../article.css");
+
+:root {
+  --accent: var(--cyan);
+}
+
+.topline {
+  width: 100%;
+  overflow: hidden;
+  padding-top: max(40px, env(safe-area-inset-top, 0px));
+  background: var(--black);
+  color: var(--white);
+  font: 700 0.72rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+}
+
+.ticker {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: ticker 28s linear infinite;
+}
+
+.ticker-group {
+  display: flex;
+  min-width: 100vw;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 0.52rem 1rem;
+}
+
+.ticker i {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  background: var(--pink);
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-33.333333%);
+  }
+}
+
+.cortez-page .article-intro h1 {
+  color: var(--black);
+  font-size: clamp(3.4rem, 5.8vw, 6.2rem);
+  text-shadow: 5px 5px 0 var(--white);
+}
+
+.cortez-page .hero-image img {
+  object-position: center 35%;
+}
+
+.cortez-page .article-aside a {
+  display: block;
+  text-decoration: none;
+}
+
+.cortez-page .article-body [id] {
+  scroll-margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .topline {
+    padding-top: max(24px, env(safe-area-inset-top, 0px));
+  }
+
+  .cortez-page .article-intro {
+    min-height: auto;
+    padding: 1.5rem 1rem 1.75rem;
+  }
+
+  .cortez-page .article-intro h1 {
+    font-size: clamp(2.65rem, 11.5vw, 3.6rem);
+    text-shadow: 3px 3px 0 var(--white);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker {
+    animation: none;
+  }
+}

@@ -50,7 +50,7 @@ img {
   font-weight: 700;
   letter-spacing: 0.16em;
   white-space: nowrap;
-  border-top: 40px solid var(--black);
+  padding-top: max(40px, env(safe-area-inset-top, 0px));
 }
 
 .ticker {
@@ -156,6 +156,14 @@ main {
   box-shadow: 8px 8px 0 var(--cyan);
 }
 
+.archive-menu-toggle {
+  display: none;
+}
+
+.archive-menu-content {
+  width: 100%;
+}
+
 .eyebrow {
   margin: 0 0 0.8rem;
   font: 800 0.78rem "Barlow Condensed", sans-serif;
@@ -170,9 +178,10 @@ main {
   letter-spacing: -0.09em;
   text-shadow: 5px 5px 0 var(--black);
   text-transform: uppercase;
+  transform: translateX(-0.08em);
 }
 
-.archive-copy > p:not(.eyebrow) {
+.archive-menu-content > p:not(.eyebrow) {
   max-width: 540px;
   margin: 1.5rem 0;
   font-size: 1.05rem;
@@ -328,6 +337,26 @@ main {
   gap: 1.5rem;
 }
 
+.politics-grid {
+  display: grid;
+}
+
+.politics-card > a {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.politics-card .card-image {
+  height: 100%;
+  min-height: 360px;
+  border-right: 2px solid var(--black);
+  border-bottom: 0;
+}
+
+.politics-card .card-copy .eyebrow {
+  background: var(--yellow);
+}
+
 .article-card {
   border: 2px solid;
   background: var(--white);
@@ -475,6 +504,8 @@ footer > a:last-child {
 @media (max-width: 900px) {
   header {
     grid-template-columns: 1fr auto;
+    row-gap: 1rem;
+    padding: 1.25rem 5vw 1rem;
   }
 
   header nav {
@@ -494,8 +525,22 @@ footer > a:last-child {
     grid-template-columns: 1fr;
   }
 
+  .politics-card > a {
+    grid-template-columns: 1fr;
+  }
+
+  .politics-card .card-image {
+    height: 340px;
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 2px solid var(--black);
+  }
+
   .archive-copy {
+    width: 100%;
+    min-width: 0;
     min-height: 300px;
+    overflow: hidden;
   }
 
   .archive-feature {
@@ -510,6 +555,7 @@ footer > a:last-child {
 @media (max-width: 650px) {
   header {
     min-height: 82px;
+    padding: 1.25rem 1rem 1rem;
   }
 
   .logo {
@@ -521,18 +567,83 @@ footer > a:last-child {
   }
 
   header nav {
+    width: 100%;
     justify-content: flex-start;
     gap: 1.2rem;
     overflow-x: auto;
+    padding: 0.35rem 0 0;
   }
 
   .archive-hero h1 {
-    font-size: 20vw;
+    max-width: 100%;
+    font-size: clamp(3.4rem, 16vw, 5rem);
     text-shadow: 4px 4px 0 var(--black);
   }
 
   .archive-copy {
-    min-height: 280px;
+    min-height: 0;
+    padding: 0.85rem 1rem;
+    box-shadow: 5px 5px 0 var(--cyan);
+  }
+
+  .archive-menu-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 0;
+    padding: 0.5rem 0;
+    background: transparent;
+    color: var(--black);
+    cursor: pointer;
+    font: 900 1.2rem "Barlow Condensed", sans-serif;
+    letter-spacing: 0.08em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .archive-menu-toggle b {
+    font: 2rem/0.7 "Archivo Black", sans-serif;
+    transition: transform 180ms ease;
+  }
+
+  .archive-copy.is-open .archive-menu-toggle b {
+    transform: rotate(45deg);
+  }
+
+  .archive-menu-content {
+    display: none;
+    border-top: 2px solid var(--black);
+    margin-top: 0.7rem;
+    padding-top: 1.2rem;
+  }
+
+  .archive-copy.is-open .archive-menu-content {
+    display: block;
+  }
+
+  .archive-menu-content > p:not(.eyebrow) {
+    max-width: 100%;
+    margin: 1.1rem 0;
+    font-size: 0.95rem;
+  }
+
+  .archive-menu-content .hero-filters {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+
+  .archive-menu-content .hero-filters button {
+    min-width: 0;
+    padding: 0.55rem 0.3rem;
+    font-size: 0.7rem;
+  }
+
+  .archive-menu-content .hero-filters button:first-child {
+    grid-column: 1 / -1;
   }
 
   .archive-feature {
@@ -549,7 +660,8 @@ footer > a:last-child {
   }
 
   .card-image,
-  .article-card-large .card-image {
+  .article-card-large .card-image,
+  .politics-card .card-image {
     height: 280px;
   }
 

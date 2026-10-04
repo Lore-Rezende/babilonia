@@ -3,6 +3,8 @@ const articles = [...document.querySelectorAll("[data-article]")];
 const groups = document.querySelectorAll("[data-group]");
 const resultCount = document.querySelector("#result-count");
 const emptyState = document.querySelector("#empty-state");
+const archiveCopy = document.querySelector(".archive-copy");
+const archiveMenuToggle = document.querySelector(".archive-menu-toggle");
 
 let activeFilter = "todos";
 
@@ -35,5 +37,15 @@ filterButtons.forEach((button) => {
     activeFilter = button.dataset.filter;
     filterButtons.forEach((item) => item.classList.toggle("active", item === button));
     updateArchive();
+
+    if (window.matchMedia("(max-width: 650px)").matches) {
+      archiveCopy.classList.remove("is-open");
+      archiveMenuToggle.setAttribute("aria-expanded", "false");
+    }
   });
+});
+
+archiveMenuToggle.addEventListener("click", () => {
+  const isOpen = archiveCopy.classList.toggle("is-open");
+  archiveMenuToggle.setAttribute("aria-expanded", String(isOpen));
 });
