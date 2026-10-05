@@ -8,7 +8,7 @@
       content="Todas as reportagens, entrevistas e críticas da Revista Babilônia."
     />
     <title>Matérias — Revista Babilônia</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../assets/css/materias.css" />
   </head>
   <body>
     <div class="topline" aria-label="Destaques">
@@ -80,10 +80,10 @@
           </div>
           </div>
         </div>
-        <a class="archive-feature" href="ballroom/index.html">
+        <a class="archive-feature" href="ballroom.html">
           <div class="archive-feature-image">
             <img
-              src="../assets/ballroom-abertura.jpg"
+              src="../assets/materias/ballroom/hero.jpg"
               alt="Ensaio da reportagem sobre a cultura Ballroom"
             />
             <span>Matéria principal</span>
@@ -115,10 +115,10 @@
             data-article
             data-themes="resistencia cultura arte ballroom comunidade"
           >
-            <a href="ballroom/index.html">
+            <a href="ballroom.html">
               <div class="card-image">
                 <img
-                  src="../assets/ballroom-abertura.jpg"
+                  src="../assets/materias/ballroom/hero.jpg"
                   alt="Ensaio da reportagem sobre a cultura Ballroom"
                 />
                 <span>Reportagem de capa</span>
@@ -143,10 +143,10 @@
             data-article
             data-themes="educacao academia representatividade pesquisa sociedade"
           >
-            <a href="academia/index.html">
+            <a href="academia.html">
               <div class="card-image">
                 <img
-                  src="../assets/academia.jpg"
+                  src="../assets/materias/academia/hero.jpg"
                   alt="Páginas da matéria sobre presença LGBTQIA+ na academia"
                 />
                 <span>Entrevista</span>
@@ -183,10 +183,10 @@
             data-article
             data-themes="politica direitos representatividade congresso juventude lgbtqia"
           >
-            <a href="cortez/index.html">
+            <a href="cortez.html">
               <div class="card-image">
                 <img
-                  src="../assets/cortez.jpg"
+                  src="../assets/materias/cortez/card.jpg"
                   alt="Guilherme Cortez em reportagem da Revista Babilônia"
                 />
                 <span>Perfil</span>
@@ -223,10 +223,10 @@
             data-article
             data-themes="cultura musica cinema lancamentos curadoria"
           >
-            <a href="lancamentos/index.html">
+            <a href="lancamentos.html">
               <div class="card-image">
                 <img
-                  src="../assets/lancamentos.jpg"
+                  src="../assets/materias/lancamentos/hero.jpg"
                   alt="Páginas da curadoria de lançamentos"
                 />
                 <span>Curadoria</span>
@@ -251,10 +251,10 @@
             data-article
             data-themes="cinema cultura critica moda jornalismo"
           >
-            <a href="diabo-veste-prada/index.html">
+            <a href="diabo-veste-prada.html">
               <div class="card-image">
                 <img
-                  src="../assets/prada.jpg"
+                  src="../assets/materias/diabo-veste-prada/hero.jpg"
                   alt="Páginas da crítica de O Diabo Veste Prada 2"
                 />
                 <span>Crítica</span>
@@ -275,6 +275,17 @@
           </article>
         </div>
       </section>
+
+      <section class="editorial-group auto-group" id="auto-group" data-group hidden>
+        <div class="group-heading">
+          <span>04</span>
+          <div>
+            <p class="eyebrow">Arquivo</p>
+            <h2>Mais matérias</h2>
+          </div>
+        </div>
+        <div class="auto-grid" id="auto-articles"></div>
+      </section>
     </main>
 
     <footer>
@@ -283,6 +294,6 @@
       <a href="../inicio/index.html">Voltar ao início ↑</a>
     </footer>
 
-    <script type="module" src="script.js"></script>
+    <script type="module" src="../assets/js/materias.js"></script>
   </body>
 </html>

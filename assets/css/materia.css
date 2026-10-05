@@ -1,0 +1,621 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;0,900;1,700&family=Inter:wght@400;600&display=swap");
+
+:root {
+  --black: #080808;
+  --paper: #f6f2e9;
+  --white: #fff;
+  --pink: #f3008a;
+  --cyan: #16bce2;
+  --yellow: #fff100;
+  --accent: var(--pink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--black);
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.progress {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 6px;
+  background: var(--accent);
+}
+
+header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  min-height: 90px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 5vw;
+  border-bottom: 2px solid;
+  background: var(--paper);
+}
+
+.logo {
+  font: clamp(2.7rem, 5vw, 4.8rem) / 0.8 "Archivo Black", sans-serif;
+  letter-spacing: -0.08em;
+  text-decoration: none;
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav a {
+  font: 800 0.82rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-hero {
+  display: grid;
+  height: clamp(430px, 62svh, 600px);
+  min-height: 0;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 2px solid;
+  background: var(--accent);
+}
+
+.article-intro {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: clamp(2.25rem, 4vw, 4rem);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font: 800 0.78rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.article-intro h1 {
+  margin: 0;
+  color: var(--white);
+  font: clamp(3.4rem, 5.8vw, 6.2rem) / 0.78 "Archivo Black", sans-serif;
+  letter-spacing: -0.075em;
+  text-shadow: 5px 5px 0 var(--black);
+  text-transform: uppercase;
+}
+
+.dek {
+  max-width: 620px;
+  margin: 1.35rem 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 2rem;
+  border-top: 2px solid;
+  padding-top: 1rem;
+  font: 700 0.78rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-image {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  border-left: 2px solid;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-image span {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.45rem 0.6rem;
+  background: var(--black);
+  color: var(--white);
+  font: 700 0.7rem "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+.article-layout {
+  display: grid;
+  max-width: 1250px;
+  grid-template-columns: 240px minmax(0, 700px);
+  justify-content: center;
+  gap: 5vw;
+  padding: clamp(2.5rem, 5vw, 5rem) 5vw;
+}
+
+.article-aside {
+  align-self: start;
+  border-top: 5px solid var(--accent);
+  padding-top: 1rem;
+  font: 800 0.8rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-aside ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article-aside li {
+  border-bottom: 1px solid;
+  padding: 0.7rem 0;
+}
+
+.article-body {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.article-body > p:first-child::first-letter {
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  color: var(--accent);
+  font: 5.8rem / 0.72 "Archivo Black", sans-serif;
+}
+
+.article-body h2 {
+  margin: 4rem 0 1.2rem;
+  font: clamp(2.7rem, 5vw, 5rem) / 0.86 "Archivo Black", sans-serif;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+.article-body blockquote {
+  margin: 4rem -7vw;
+  border: 2px solid;
+  padding: clamp(2rem, 4vw, 4rem);
+  background: var(--yellow);
+  box-shadow: 10px 10px 0 var(--black);
+  font: 800 clamp(2rem, 4.5vw, 4.5rem) / 0.95 "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+.article-body .inline-image {
+  margin: 4rem 0;
+  border: 2px solid;
+}
+
+.article-body .inline-image figcaption {
+  border-top: 2px solid;
+  padding: 0.6rem;
+  font: 700 0.72rem "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+.more {
+  padding: 5rem 6vw;
+  border-top: 2px solid;
+  background: var(--black);
+  color: var(--white);
+}
+
+.more h2 {
+  margin: 0 0 2rem;
+  font: clamp(3rem, 6vw, 6rem) / 0.8 "Archivo Black", sans-serif;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+}
+
+.more a {
+  display: inline-block;
+  border: 2px solid var(--white);
+  padding: 0.9rem 1.1rem;
+  color: var(--white);
+  font: 800 0.85rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (max-width: 850px) {
+  .article-hero {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .article-intro {
+    min-height: 0;
+    padding: 2rem 5vw 2.25rem;
+  }
+
+  .article-intro h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
+  }
+
+  .hero-image {
+    height: 180px;
+    min-height: 180px;
+    border-top: 2px solid;
+    border-left: 0;
+  }
+
+  .article-layout {
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
+  }
+
+  .article-aside {
+    max-width: 420px;
+  }
+
+  .article-body {
+    order: -1;
+  }
+
+  .article-body blockquote {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+  }
+
+  .article-intro {
+    min-height: 0;
+    overflow: hidden;
+    padding: 1.5rem 1rem 1.75rem;
+  }
+
+  .article-intro h1 {
+    max-width: 100%;
+    font-size: clamp(2.65rem, 11.5vw, 3.6rem);
+    text-shadow: 3px 3px 0 var(--black);
+  }
+
+  .article-intro .dek {
+    max-width: 100%;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  .article-intro .byline {
+    width: 100%;
+    gap: 0.4rem;
+    padding-top: 0.7rem;
+    font-size: 0.7rem;
+  }
+
+  .hero-image {
+    display: none;
+  }
+}
+
+
+/* Identidade de cada matéria */
+.ballroom-page,
+.prada-page { --accent: var(--pink); }
+.cortez-page,
+.academia-page,
+.safico-page { --accent: var(--cyan); }
+.lancamentos-page { --accent: var(--yellow); }
+
+.cortez-page .article-intro h1 {
+  color: var(--black);
+  font-size: clamp(3.4rem, 5.8vw, 6.2rem);
+  text-shadow: 5px 5px 0 var(--white);
+}
+.cortez-page .hero-image img { object-position: center 35%; }
+.cortez-page .article-aside a { display: block; text-decoration: none; }
+.cortez-page .article-body [id] { scroll-margin-top: 2rem; }
+.lancamentos-page .article-intro h1 {
+  color: var(--black);
+  text-shadow: 5px 5px 0 var(--white);
+}
+@media (max-width: 600px) {
+  .cortez-page .article-intro h1 {
+    font-size: clamp(2.65rem, 11.5vw, 3.6rem);
+    text-shadow: 3px 3px 0 var(--white);
+  }
+}
+
+/* Recursos específicos da matéria Ballroom */
+.ballroom-page .article-hero {
+  min-height: 0;
+}
+
+.ballroom-page .article-intro {
+  min-height: 0;
+  padding: clamp(2.25rem, 4vw, 4rem);
+}
+
+.ballroom-page .article-intro h1 {
+  font-size: clamp(3.4rem, 5.8vw, 6.2rem);
+}
+
+.ballroom-page .article-intro .dek {
+  margin: 1.35rem 0;
+}
+
+.ballroom-page .hero-image {
+  min-height: 0;
+}
+
+.topline {
+  width: 100%;
+  overflow: hidden;
+  padding-top: max(40px, env(safe-area-inset-top, 0px));
+  background: var(--black);
+  color: var(--white);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+}
+
+.ticker {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: ticker 28s linear infinite;
+}
+
+.ticker-group {
+  display: flex;
+  min-width: 100vw;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 0.52rem 1rem;
+}
+
+.ticker i {
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  background: var(--pink);
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-33.333333%);
+  }
+}
+
+.ballroom-page .article-aside {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.ballroom-page .article-layout {
+  align-items: start;
+}
+
+.article-sidebar {
+  min-width: 0;
+}
+
+.article-index {
+  border-top: 5px solid var(--pink);
+  padding-top: 1rem;
+}
+
+.article-index a {
+  display: block;
+  text-decoration: none;
+  transition: color 160ms ease, padding 160ms ease;
+}
+
+.article-index a:hover {
+  padding-left: 0.35rem;
+  color: var(--pink);
+}
+
+.ballroom-page .article-body h2 {
+  scroll-margin-top: 2rem;
+}
+
+.promo-area {
+  display: grid;
+  width: 100%;
+  gap: 1.5rem;
+  margin: 2rem 0 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.promo-card {
+  position: relative;
+  display: grid;
+  min-height: 250px;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid var(--black);
+  padding: 1.5rem;
+  box-shadow: 7px 7px 0 var(--black);
+  font: 900 2rem/0.9 "Barlow Condensed", sans-serif;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.promo-card span {
+  position: relative;
+  z-index: 2;
+  color: var(--black);
+}
+
+.promo-card::before,
+.promo-card::after {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: var(--pink);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.promo-card::before {
+  top: -45px;
+  left: -45px;
+}
+
+.promo-card::after {
+  right: -45px;
+  bottom: -45px;
+}
+
+.promo-yellow {
+  background: var(--yellow);
+}
+
+.promo-cyan {
+  background: var(--cyan);
+}
+
+.promo-cyan::before,
+.promo-cyan::after {
+  background: var(--yellow);
+}
+
+.full-edition-button {
+  display: inline-block;
+  margin: 0;
+  border: 2px solid var(--black);
+  padding: 1rem 1.2rem;
+  background: var(--pink);
+  box-shadow: 6px 6px 0 var(--black);
+  color: var(--white);
+  font: 900 0.9rem "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.full-edition-button:hover {
+  box-shadow: 2px 2px 0 var(--black);
+  transform: translate(4px, 4px);
+}
+
+@media (max-width: 850px) {
+  .ballroom-page .article-intro {
+    min-height: 0;
+    padding: 2rem 5vw 2.25rem;
+  }
+
+  .ballroom-page .article-intro h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
+  }
+
+  .ballroom-page .hero-image {
+    height: 180px;
+    min-height: 180px;
+  }
+
+  .ballroom-page .article-layout {
+    padding-top: 2rem;
+  }
+
+  .ballroom-page .article-body {
+    order: -1;
+  }
+
+  .promo-area {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .promo-card {
+    min-height: 170px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .topline {
+    padding-top: max(24px, env(safe-area-inset-top, 0px));
+  }
+
+  .ballroom-page .article-intro {
+    min-width: 0;
+    min-height: auto;
+    overflow: hidden;
+    padding: 1.5rem 1rem 1.75rem;
+  }
+
+  .ballroom-page .article-intro h1 {
+    max-width: 100%;
+    font-size: clamp(2.65rem, 11.5vw, 3.6rem);
+    letter-spacing: -0.065em;
+    text-shadow: 3px 3px 0 var(--black);
+  }
+
+  .ballroom-page .article-intro .dek {
+    max-width: 100%;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  .ballroom-page .article-intro .byline {
+    width: 100%;
+    gap: 0.4rem;
+    padding-top: 0.7rem;
+    font-size: 0.7rem;
+  }
+
+  .ballroom-page .hero-image {
+    display: none;
+  }
+
+  .promo-area {
+    grid-template-columns: 1fr;
+  }
+
+  .full-edition-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker {
+    animation: none;
+  }
+}

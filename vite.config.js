@@ -1,5 +1,16 @@
 import { defineConfig } from "vite";
 import { resolve } from "node:path";
+import { readdirSync } from "node:fs";
+
+const materiasDir = resolve(__dirname, "materias");
+const materiaInputs = Object.fromEntries(
+  readdirSync(materiasDir)
+    .filter((file) => file.endsWith(".html") && file !== "index.html")
+    .map((file) => [
+      `materia-${file.replace(/\.html$/, "")}`,
+      resolve(materiasDir, file),
+    ]),
+);
 
 export default defineConfig({
   base: process.env.FIGMA_PUBLIC_URL
@@ -11,16 +22,11 @@ export default defineConfig({
         raiz: resolve(__dirname, "index.html"),
         inicio: resolve(__dirname, "inicio/index.html"),
         materias: resolve(__dirname, "materias/index.html"),
-        materiaBallroom: resolve(__dirname, "materias/ballroom/index.html"),
-        materiaAcademia: resolve(__dirname, "materias/academia/index.html"),
-        materiaLancamentos: resolve(__dirname, "materias/lancamentos/index.html"),
-        materiaPrada: resolve(__dirname, "materias/diabo-veste-prada/index.html"),
-        materiaCortez: resolve(__dirname, "materias/cortez/index.html"),
+        ...materiaInputs,
         manifesto: resolve(__dirname, "manifesto/index.html"),
         agenda: resolve(__dirname, "agenda/index.html"),
         sobre: resolve(__dirname, "sobre/index.html"),
         edicao: resolve(__dirname, "edicao/index.html"),
-        revista: resolve(__dirname, "revista/index.html"),
       },
     },
   },
