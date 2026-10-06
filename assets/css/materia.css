@@ -7,7 +7,12 @@
   --pink: #f3008a;
   --cyan: #16bce2;
   --yellow: #fff100;
-  --accent: var(--pink);
+  --materia-fundo-titulo: var(--pink);
+  --materia-cor-titulo: var(--white);
+  --materia-sombra-titulo: var(--black);
+  --materia-cor-destaque: var(--pink);
+  --materia-fundo-elementos: var(--yellow);
+  --accent: var(--materia-cor-destaque);
 }
 
 * {
@@ -80,7 +85,7 @@ header nav a {
   min-height: 0;
   grid-template-columns: 1fr 1fr;
   border-bottom: 2px solid;
-  background: var(--accent);
+  background: var(--materia-fundo-titulo);
 }
 
 .article-intro {
@@ -101,10 +106,10 @@ header nav a {
 
 .article-intro h1 {
   margin: 0;
-  color: var(--white);
+  color: var(--materia-cor-titulo);
   font: clamp(3.4rem, 5.8vw, 6.2rem) / 0.78 "Archivo Black", sans-serif;
   letter-spacing: -0.075em;
-  text-shadow: 5px 5px 0 var(--black);
+  text-shadow: 5px 5px 0 var(--materia-sombra-titulo);
   text-transform: uppercase;
 }
 
@@ -197,6 +202,7 @@ header nav a {
   margin: 4rem 0 1.2rem;
   font: clamp(2.7rem, 5vw, 5rem) / 0.86 "Archivo Black", sans-serif;
   letter-spacing: -0.06em;
+  scroll-margin-top: 2rem;
   text-transform: uppercase;
 }
 
@@ -204,7 +210,7 @@ header nav a {
   margin: 4rem -7vw;
   border: 2px solid;
   padding: clamp(2rem, 4vw, 4rem);
-  background: var(--yellow);
+  background: var(--materia-fundo-elementos);
   box-shadow: 10px 10px 0 var(--black);
   font: 800 clamp(2rem, 4.5vw, 4.5rem) / 0.95 "Barlow Condensed", sans-serif;
   text-transform: uppercase;
@@ -305,7 +311,7 @@ header nav a {
   .article-intro h1 {
     max-width: 100%;
     font-size: clamp(2.65rem, 11.5vw, 3.6rem);
-    text-shadow: 3px 3px 0 var(--black);
+    text-shadow: 3px 3px 0 var(--materia-sombra-titulo);
   }
 
   .article-intro .dek {
@@ -327,55 +333,16 @@ header nav a {
 }
 
 
-/* Identidade de cada matéria */
-.ballroom-page,
-.prada-page { --accent: var(--pink); }
-.cortez-page,
-.academia-page,
-.safico-page { --accent: var(--cyan); }
-.lancamentos-page { --accent: var(--yellow); }
-
-.cortez-page .article-intro h1 {
-  color: var(--black);
-  font-size: clamp(3.4rem, 5.8vw, 6.2rem);
-  text-shadow: 5px 5px 0 var(--white);
-}
-.cortez-page .hero-image img { object-position: center 35%; }
-.cortez-page .article-aside a { display: block; text-decoration: none; }
-.cortez-page .article-body [id] { scroll-margin-top: 2rem; }
-.lancamentos-page .article-intro h1 {
-  color: var(--black);
-  text-shadow: 5px 5px 0 var(--white);
-}
-@media (max-width: 600px) {
-  .cortez-page .article-intro h1 {
-    font-size: clamp(2.65rem, 11.5vw, 3.6rem);
-    text-shadow: 3px 3px 0 var(--white);
-  }
+.article-aside a {
+  display: block;
+  text-decoration: none;
 }
 
-/* Recursos específicos da matéria Ballroom */
-.ballroom-page .article-hero {
-  min-height: 0;
+.article-body [id] {
+  scroll-margin-top: 2rem;
 }
 
-.ballroom-page .article-intro {
-  min-height: 0;
-  padding: clamp(2.25rem, 4vw, 4rem);
-}
-
-.ballroom-page .article-intro h1 {
-  font-size: clamp(3.4rem, 5.8vw, 6.2rem);
-}
-
-.ballroom-page .article-intro .dek {
-  margin: 1.35rem 0;
-}
-
-.ballroom-page .hero-image {
-  min-height: 0;
-}
-
+/* Componentes opcionais disponíveis para qualquer matéria */
 .topline {
   width: 100%;
   overflow: hidden;
@@ -419,16 +386,9 @@ header nav a {
   }
 }
 
-.ballroom-page .article-aside {
+.article-sidebar {
   border-top: 0;
   padding-top: 0;
-}
-
-.ballroom-page .article-layout {
-  align-items: start;
-}
-
-.article-sidebar {
   min-width: 0;
 }
 
@@ -446,10 +406,6 @@ header nav a {
 .article-index a:hover {
   padding-left: 0.35rem;
   color: var(--pink);
-}
-
-.ballroom-page .article-body h2 {
-  scroll-margin-top: 2rem;
 }
 
 .promo-area {
@@ -536,28 +492,6 @@ header nav a {
 }
 
 @media (max-width: 850px) {
-  .ballroom-page .article-intro {
-    min-height: 0;
-    padding: 2rem 5vw 2.25rem;
-  }
-
-  .ballroom-page .article-intro h1 {
-    font-size: clamp(3rem, 10vw, 5rem);
-  }
-
-  .ballroom-page .hero-image {
-    height: 180px;
-    min-height: 180px;
-  }
-
-  .ballroom-page .article-layout {
-    padding-top: 2rem;
-  }
-
-  .ballroom-page .article-body {
-    order: -1;
-  }
-
   .promo-area {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -571,37 +505,6 @@ header nav a {
 @media (max-width: 600px) {
   .topline {
     padding-top: max(24px, env(safe-area-inset-top, 0px));
-  }
-
-  .ballroom-page .article-intro {
-    min-width: 0;
-    min-height: auto;
-    overflow: hidden;
-    padding: 1.5rem 1rem 1.75rem;
-  }
-
-  .ballroom-page .article-intro h1 {
-    max-width: 100%;
-    font-size: clamp(2.65rem, 11.5vw, 3.6rem);
-    letter-spacing: -0.065em;
-    text-shadow: 3px 3px 0 var(--black);
-  }
-
-  .ballroom-page .article-intro .dek {
-    max-width: 100%;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-  }
-
-  .ballroom-page .article-intro .byline {
-    width: 100%;
-    gap: 0.4rem;
-    padding-top: 0.7rem;
-    font-size: 0.7rem;
-  }
-
-  .ballroom-page .hero-image {
-    display: none;
   }
 
   .promo-area {
