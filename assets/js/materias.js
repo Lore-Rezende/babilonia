@@ -1,11 +1,21 @@
-const articleFiles = import.meta.glob(
-  ["../../materias/*.html", "!../../materias/index.html"],
-  {
-    query: "?raw",
-    import: "default",
-    eager: true,
-  },
-);
+import { materias as staticArticles } from "./materias-data.js";
+
+const articleFiles =
+  typeof import.meta.glob === "function"
+    ? import.meta.glob(["../../materias/*.html", "!../../materias/index.html"], {
+        query: "?raw",
+        import: "default",
+        eager: true,
+      })
+    : {};
+const articleImages =
+  typeof import.meta.glob === "function"
+    ? import.meta.glob("../materias/**/*.{jpg,jpeg,png,webp,gif}", {
+        query: "?url",
+        import: "default",
+        eager: true,
+      })
+    : {};
 
 const autoGroup = document.querySelector("#auto-group");
 const autoArticles = document.querySelector("#auto-articles");
@@ -53,6 +63,16 @@ function articleData(path, source) {
   };
 }
 
+function resolveArticleImage(article) {
+  if (!article.imageSrc) return article;
+
+  const imageModulePath = article.imageSrc.replace("../assets/", "../");
+  return {
+    ...article,
+    imageSrc: articleImages[imageModulePath] || article.imageSrc,
+  };
+}
+
 function createAutoCard(data, number) {
   const article = document.createElement("article");
   article.className = "article-card";
@@ -97,8 +117,12 @@ function createAutoCard(data, number) {
   return article;
 }
 
-const discoveredArticles = Object.entries(articleFiles)
-  .map(([path, source]) => articleData(path, source))
+const catalogArticles = Object.keys(articleFiles).length
+  ? Object.entries(articleFiles).map(([path, source]) => articleData(path, source))
+  : staticArticles;
+
+const discoveredArticles = catalogArticles
+  .map(resolveArticleImage)
   .filter((article) => !existingLinks.has(article.filename))
   .sort((a, b) => a.title.localeCompare(b.title, "pt-BR"));
 
@@ -159,3 +183,5 @@ archiveMenuToggle.addEventListener("click", () => {
   const isOpen = archiveCopy.classList.toggle("is-open");
   archiveMenuToggle.setAttribute("aria-expanded", String(isOpen));
 });
+
+updateArchive();

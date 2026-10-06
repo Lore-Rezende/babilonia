@@ -4,7 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "materias": "node scripts/gerar-materias.js",
+    "predev": "pnpm materias",
     "dev": "vite",
+    "prebuild": "pnpm materias",
     "build": "vite build",
     "preview": "vite preview"
   },

@@ -15,7 +15,7 @@ const materiaInputs = Object.fromEntries(
 export default defineConfig({
   base: process.env.FIGMA_PUBLIC_URL
     ? `${process.env.FIGMA_PUBLIC_URL}/`
-    : "/",
+    : "./",
   build: {
     rollupOptions: {
       input: {
